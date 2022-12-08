@@ -52,16 +52,9 @@ def find_score(opp, plr):
 	opp = move_map[opp] 
 	plr = move_map[plr]
 	
-	if   opp == plr:          contest = 3
-	elif opp is rock: 
-		if   plr is paper:    contest = 6
-		else:                 contest = 0
-	elif opp is paper: 
-		if   plr is scissors: contest = 6
-		else:                 contest = 0
-	else: 
-		if   plr is rock:     contest = 6
-		else:                 contest = 0
+	if   plr == opp:          contest = 3
+	elif plr == win_map[opp]: contest = 0
+	else:                     contest = 6 
 	
 	return contest + shape_map[plr]
 	
